@@ -143,7 +143,7 @@ trabajador * crear_trabajador(){
     int dni;
     bool estres=false;
     int lugar;
-    int partido ;
+    int partido;
     int comp_max=0;
     int cant_t;
     ////
@@ -222,7 +222,7 @@ int main()
 
             for(int i=0;i<tam;i++){
             if(trs[i]!=NULL){
-                if(trs[i]->estres=true){
+                if(trs[i]->estres==true){
 
                     printf("%d: esta estresado\n", i);
 
@@ -248,8 +248,14 @@ int main()
 
             break;
         case 4:
-            ///1:poder judicial, 2:legislativo,3:ejecutivo,4:prensa
-            for(int i=0;i<tam;i++){
+
+            for(int i=0; i<tam; i++){
+
+                for(int j=0; j<tam;j++){
+
+                    if(trs[i]->dni!=trs[j]->dni){
+
+                         for(int i=0;i<tam;i++){
                 if(trs[i+1]!=NULL && i!=tam-1){
                     ///a
                     if(((trs[i]->lugar==1) && (trs[i+1]->lugar==3))||((trs[i]->lugar==3) && (trs[i+1]->lugar==1))){
@@ -285,6 +291,12 @@ int main()
                 }
 
             }
+                    }
+                }
+
+            }
+            ///1:poder judicial, 2:legislativo,3:ejecutivo,4:prensa
+
 
             break;
         case 5:
